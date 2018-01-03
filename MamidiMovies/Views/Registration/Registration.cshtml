@@ -1,0 +1,41 @@
+﻿@model MamidiMovies.Models.RegistrationViewModel
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mamidi Movies Registration</h2>
+
+
+@using (Html.BeginForm("Registration", "Registration", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                @Html.LabelFor(r => r.Username)
+                @Html.TextBoxFor(r => r.Username, new { placeHolder = "User Name", @class = "form-control" })
+                @Html.ValidationMessageFor(r => r.Username, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(r => r.Password)
+                @Html.PasswordFor(r => r.Password, new { placeHolder = "Password", @class = "form-control" })
+                @Html.ValidationMessageFor(r => r.Password, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(r => r.ConfirmPassword)
+                @Html.PasswordFor(r => r.ConfirmPassword, new { placeHolder = "Password Confirmation", @class = "form-control" })
+                @Html.ValidationMessageFor(r => r.ConfirmPassword, "", new { @class = "text-danger" })
+            </div>
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <hr />
+    <p>
+        <b>@Html.ActionLink("Back to Home", "Index", "Home")</b>
+    </p>
+
+}
+
+

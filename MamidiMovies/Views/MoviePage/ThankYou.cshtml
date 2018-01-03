@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "ThankYou";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div><img id="thanks" src="~/Content/thank-you-140227_640.jpg" alt="Thanks for your submission!" /></div>
+<br />
+<div class="pixabay"><b>Image Courtesy of</b> <a href="https://pixabay.com"><b>Pixabay</b></a></div>
+<h2 id="submission">Thanks for your submission!</h2>
+<hr />
+
+<p>
+    <b>@Html.ActionLink("Back to Movie Page", "MoviePage", "MoviePage")</b>
+</p>
+
+<p>
+    <b>@Html.ActionLink("Back to Home", "Index", "Home")</b>
+</p>
+

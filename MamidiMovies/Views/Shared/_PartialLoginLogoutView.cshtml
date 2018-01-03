@@ -1,0 +1,13 @@
+﻿@model MamidiMovies.Models.LoginViewModel
+
+@if (Session["UsernameKey"] == null)
+{
+    <li>@Html.ActionLink("Registration", "Registration", "Registration")</li>
+    <li>@Html.ActionLink("Login", "Login", "Login")</li>
+}
+
+else
+{
+    <li>@Html.ActionLink($"Hello, {Model.Username}!", "MoviePage", "MoviePage")</li>
+    <li>@Html.ActionLink("Logout", "Logout", "Login")</li>
+}

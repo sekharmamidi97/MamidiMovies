@@ -1,0 +1,67 @@
+﻿@model MamidiMovies.Models.MoviePageViewModel
+@{
+    ViewBag.Title = "MoviePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mango Movies Movie Page</h2>
+
+@using (Html.BeginForm("MoviePage", "MoviePage", FormMethod.Post))
+{
+    <div class="row">
+        @*<div class="col-sm-4"></div>
+            <div class="col-sm-4">*@
+        <div class="col-md-10"></div>
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Title, new { placeHolder = "Title", @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Title)
+            </div>
+        </div>
+        <div class="col-md-10"></div>
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Year)
+                @Html.TextBoxFor(m => m.Year, new { placeHolder = "Year Released", @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Year)
+            </div>
+        </div>
+        <div class="col-md-10"></div>
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Genre)<br />
+                @Html.CheckBoxFor(m => m.IsAction)
+                @Html.LabelFor(m => m.IsAction, "Action")<br />
+                @Html.CheckBoxFor(m => m.IsAdventure)
+                @Html.LabelFor(m => m.IsAdventure, "Adventure")<br />
+                @Html.CheckBoxFor(m => m.IsComedy)
+                @Html.LabelFor(m => m.IsComedy, "Comedy")<br />
+                @Html.CheckBoxFor(m => m.IsDocumentary)
+                @Html.LabelFor(m => m.IsDocumentary, "Documentary")<br />
+                @Html.CheckBoxFor(m => m.IsDrama)
+                @Html.LabelFor(m => m.IsDrama, "Drama")<br />
+                @Html.CheckBoxFor(m => m.IsFamily)
+                @Html.LabelFor(m => m.IsFamily, "Family")<br />
+                @Html.CheckBoxFor(m => m.IsHistorical)
+                @Html.LabelFor(m => m.IsHistorical, "Historical")<br />
+                @Html.CheckBoxFor(m => m.IsHorror)
+                @Html.LabelFor(m => m.IsHorror, "Horror")<br />
+                @Html.CheckBoxFor(m => m.IsMystery)
+                @Html.LabelFor(m => m.IsMystery, "Mystery")<br />
+                @Html.CheckBoxFor(m => m.IsScienceFiction)
+                @Html.LabelFor(m => m.IsScienceFiction, "Science Fiction")<br />
+                @Html.CheckBoxFor(m => m.IsCartoon)
+                @Html.LabelFor(m => m.IsCartoon, "Cartoon")<br />
+                @Html.CheckBoxFor(m => m.IsTelevisionShow)
+                @Html.LabelFor(m => m.IsTelevisionShow, "TelevisionShow")<br />
+                @Html.CheckBoxFor(m => m.IsOther)
+                @Html.LabelFor(m => m.IsOther, "Other")
+                @Html.ValidationMessageFor(m => m.Genre)
+            </div>
+            <input type="submit" class="btn btn-default" value="Submit" />
+        </div>
+    </div>
+}
+
+

@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/MamidiMoviesStyleSheet.css" rel="stylesheet" />
+    <title>MamidiMovies</title>
+</head>
+<body>
+    <nav id="moviebar" class="navbar-default">
+        <div class="row">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Register", "Registration", "Registration")</li>
+                <li>@Html.ActionLink("Log In", "Login", "Login")</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="mainDiv">
+        @RenderBody()
+    </div>
+</body>
+</html>

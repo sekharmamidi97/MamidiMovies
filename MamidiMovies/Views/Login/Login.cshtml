@@ -1,0 +1,37 @@
+﻿@model MamidiMovies.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mamidi Movies Login Page</h2>
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                @Html.LabelFor(l => l.Username)
+                @Html.TextBoxFor(l => l.Username, new { placeHolder = "User Name", @class = "form-control" })
+                @Html.ValidationMessageFor(l => l.Username, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(l => l.Password)
+                @Html.PasswordFor(l => l.Password, new { placeHolder = "Password", @class = "form-control" })
+                @Html.ValidationMessageFor(l => l.Password, "", new { @class = "text-danger" })
+            </div>
+            <input type="submit" class="btn btn-default" value="Log In" />
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <hr />
+    <p>
+        <b>@Html.ActionLink("Back to Registration", "Registration", "Registration")</b>
+    </p>
+
+    <p>
+        <b>@Html.ActionLink("Back to Home", "Index", "Home")</b>
+    </p>
+}
+
