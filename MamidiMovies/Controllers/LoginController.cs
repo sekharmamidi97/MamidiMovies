@@ -21,28 +21,33 @@ namespace MamidiMovies.Controllers
 
         }
 
-        [HttpGet]
+        //[HttpGet]
+        //public ActionResult Login()
+        //{
+        //    if (IsAuthenticated)
+        //    {
+        //        return RedirectToAction("MoviePage", "MoviePage");
+        //    }
+        //    else
+        //    {
+        //        var model = new LoginViewModel();
+        //        return View("Login", model);
+        //    }
+
+        //}
+
         public ActionResult Login()
         {
-            if (IsAuthenticated)
-            {
-                return RedirectToAction("MoviePage", "MoviePage");
-            }
-            else
-            {
-                var model = new LoginViewModel();
-                return View("Login", model);
-            }
-
+            return View("Login");
         }
 
         [HttpPost]
         public ActionResult Login(LoginViewModel model)
         {
-            if (IsAuthenticated)
-            {
-                return RedirectToAction("MoviePage", "MoviePage");
-            }
+            //if (IsAuthenticated)
+            //{
+            //    return RedirectToAction("MoviePage", "MoviePage");
+            //}
 
             if (ModelState.IsValid)
             {

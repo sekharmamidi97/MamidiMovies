@@ -41,20 +41,21 @@ namespace MamidiMovies.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                var registeredUser = loginDAL.GetUsername(model.Username);
-                //if (registeredUser == null)
-                //{
-                //    ModelState.AddModelError("Username", "This username is not available, please create another username.");
-                //    return View("Registration", model);
-                //}
-                var user = new LoginViewModel();
-                loginDAL.RegisterUser(user);
-                return RedirectToAction("Index", "Home");
+                var user = loginDAL.GetUsername(model.Username);
+                var registeredUser = new LoginViewModel
+                {
+                    Username = model.Username,
+                    Password = model.Password,
+
+                };
+
+                loginDAL.RegisterUser(registeredUser);
+                return RedirectToAction("Login", "Login");
             }
             return View("Registration", model);
         }
-        
+
     }
 }
