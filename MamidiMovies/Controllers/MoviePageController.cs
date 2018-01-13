@@ -22,6 +22,17 @@ namespace MamidiMovies.Controllers
 
         }
 
+        public ActionResult MoviePage()
+        {
+            return View("MoviePage");
+        }
+
+        [HttpPost]
+        public ActionResult MoviePage(MoviePageViewModel model)
+        {
+            return View("MoviePage");
+        }
+
         //Get Add Movie Information
         public ActionResult AddMovieInformation()
         {
